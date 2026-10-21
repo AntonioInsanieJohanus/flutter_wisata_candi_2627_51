@@ -1,5 +1,3 @@
-
-
 import 'package:flutter_wisata_candi_2627_51/models/candi.dart';
 
 var candiList = [
