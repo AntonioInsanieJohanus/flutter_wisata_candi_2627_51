@@ -12,7 +12,7 @@ class DetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // DetailHeader
+            // TODO: DetailHeader
             Stack(
               children: [
                 Padding(
@@ -47,6 +47,7 @@ class DetailScreen extends StatelessWidget {
                 ),
               ],
             ),
+
             // DetailInfo
             // DetailInfo Atas
             Padding(
@@ -119,7 +120,7 @@ class DetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Divider(color: Colors.deepPurple.shade100),
-            const SizedBox(height: 16),          
+            const SizedBox(height: 16),
             const Text(
               'Deskripsi',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -127,6 +128,50 @@ class DetailScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Text(candi.description),
             // DetailGallery
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Divider(color: Colors.deepPurple.shade100),
+                  const Text(
+                    'Galeri',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  //SixeBox dibawah ini untuk image gallery, gunakan ListView.builder agar bisa di scroll horizontal
+                  SizedBox(
+                    height: 100,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: candi.imageUrls.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.network(
+                                candi.imageUrls[index],
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Tap untuk memperbesar',
+                    style: TextStyle(fontSize: 12, color: Colors.black54),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
