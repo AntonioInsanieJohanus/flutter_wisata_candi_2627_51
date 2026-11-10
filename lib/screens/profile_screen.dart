@@ -51,26 +51,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               //Todo 3 profile info
             Row(
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(children: [
-                    Icon(Icons.lock , color: Colors.amber),
-                    SizedBox(width: 8,),
-                    Text("Pengguna",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                    )
-                  ],
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child : Row(children: [
+                      Icon(Icons.lock, color: Colors.amber,),
+                      SizedBox(width: 8,),
+                      Text("Pengguna", style: TextStyle(fontSize: 18 , fontWeight: FontWeight.bold),)
+                    ],
                   ),
-                  E
-                  
                 ),
-            ],
-            )
-              //Todo 4 profile action
+                  Expanded(child: Text(' : RRR', style: TextStyle(fontSize: 18),))
+                ],
+              ),
             ],
           ),
-        ],
+        ],  
       ),
     );
+              //Todo 4 profile action
+            
   }
 }
